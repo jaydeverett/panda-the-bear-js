@@ -1,3 +1,4 @@
+Part 1
 
 1. Select the element that contains the profile image (hint: look for the class). Change the src attribute so it points to a picture of your choosing instead.
 PROTIP: use the inspector to learn the dimensions of the current profile image and use a placeholder image service such as Place Bear to get an image of the same size.
@@ -89,3 +90,52 @@ submitbutton.disabled = true;
 personalinfo = document.querySelector('ul.bio-info');
 
 personalinfo.remove('bio-info-value');
+
+Part 2
+
+1.
+
+var timetravel = document.querySelector('#time-travel > h4');
+
+timetravel.remove('h4');
+
+2.
+
+pikachu = document.querySelector('#right-image > img');
+
+var newpikachu = pikachu.cloneNode();
+
+var portfolio = document.querySelector('body > section > div:nth-child(2) > div.portfolio-container');
+
+portfolio.appendChild(newpikachu);
+
+3.
+
+for (var i = 0; i < 10; i++) {
+newpikachu = pikachu.cloneNode(true);
+portfolio.appendChild(newpikachu);
+}
+
+4.
+
+var listItem = document.createElement('li');
+
+var leftSpan = document.createElement('span');
+
+var lastUpdated = document.createTextNode('Page last updated on');
+
+leftSpan.appendChild(lastUpdated);
+
+listItem.appendChild(leftSpan);
+
+var dateText = document.createTextNode(new Date());
+
+var rightSpan = document.createElement('span');
+
+rightSpan.appendChild(dateText);
+
+listItem.appendChild(rightSpan);
+
+var bio = document.querySelector('aside > ul');
+
+bio.appendChild(listItem);
